@@ -1,0 +1,1358 @@
+<html lang="hi" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>स्वास्तिक ऑनलाइन | Swastik Online - Premium Digital Service Center</title>
+    <meta name="description" content="आपकी सभी ऑनलाइन सेवाओं का विश्वसनीय केंद्र - Driving License, PAN Card, Udyam Registration, Scholarships">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1E40AF',
+                        secondary: '#F59E0B',
+                        accent: '#10B981',
+                        dark: '#0F172A',
+                        light: '#F8FAFC'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'Noto Sans Devanagari', 'sans-serif'],
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'float-delayed': 'float 6s ease-in-out 3s infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'slide-up': 'slideUp 0.5s ease-out',
+                        'fade-in': 'fadeIn 0.5s ease-out',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        .glass {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .glass-dark {
+            background: rgba(15, 23, 42, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+        }
+        .dark .glass-card {
+            background: rgba(30, 41, 59, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #1E40AF 0%, #3B82F6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .dark .gradient-text {
+            background: linear-gradient(135deg, #60A5FA 0%, #93C5FD 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, #F8FAFC 0%, #EFF6FF 50%, #FEF3C7 100%);
+        }
+        .dark .hero-gradient {
+            background: linear-gradient(135deg, #0F172A 0%, #1E293B 50%, #1E1B4B 100%);
+        }
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px -5px rgba(30, 64, 175, 0.15);
+        }
+        .timeline-line {
+            background: linear-gradient(to bottom, #1E40AF, #F59E0B, #10B981);
+        }
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .masonry-grid {
+            column-count: 1;
+            column-gap: 1.5rem;
+        }
+        @media (min-width: 768px) {
+            .masonry-grid { column-count: 2; }
+        }
+        @media (min-width: 1024px) {
+            .masonry-grid { column-count: 3; }
+        }
+        .break-inside-avoid {
+            break-inside: avoid;
+        }
+    </style>
+</head>
+<body class="font-sans text-slate-800 dark:text-slate-200 bg-light dark:bg-slate-900 transition-colors duration-300">
+
+    <!-- Public Website Container -->
+    <div id="public-site">
+        
+        <!-- Navigation -->
+        <nav class="fixed w-full z-50 glass dark:glass-dark border-b border-white/20 transition-all duration-300" id="navbar">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between items-center h-20">
+                    <!-- Logo -->
+                    <div class="flex items-center space-x-3 cursor-pointer" onclick="window.scrollTo(0,0)">
+                        <div class="w-12 h-12 bg-gradient-to-br from-primary to-blue-600 rounded-xl flex items-center justify-center shadow-lg shadow-blue-500/30">
+                            <span class="text-white font-bold text-2xl">ॐ</span>
+                        </div>
+                        <div class="flex flex-col">
+                            <span class="text-xl font-bold text-slate-800 dark:text-white leading-tight">स्वास्तिक ऑनलाइन</span>
+                            <span class="text-xs text-slate-500 dark:text-slate-400 font-medium tracking-wider">Swastik Online</span>
+                        </div>
+                    </div>
+
+                    <!-- Desktop Menu -->
+                    <div class="hidden md:flex items-center space-x-8">
+                        <a href="#home" class="text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-blue-400 font-medium transition-colors">होम</a>
+                        <a href="#services" class="text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-blue-400 font-medium transition-colors">सेवाएं</a>
+                        <a href="#process" class="text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-blue-400 font-medium transition-colors">प्रक्रिया</a>
+                        <a href="#contact" class="text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-blue-400 font-medium transition-colors">संपर्क</a>
+                        <button onclick="toggleDarkMode()" class="p-2 rounded-lg hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors">
+                            <i class="fas fa-moon dark:hidden text-slate-600"></i>
+                            <i class="fas fa-sun hidden dark:block text-yellow-400"></i>
+                        </button>
+                        <button onclick="showAdminLogin()" class="bg-primary hover:bg-blue-700 text-white px-6 py-2.5 rounded-full font-medium transition-all shadow-lg shadow-blue-500/30 hover:shadow-blue-500/50">
+                            Admin Login
+                        </button>
+                    </div>
+
+                    <!-- Mobile Menu Button -->
+                    <div class="md:hidden flex items-center space-x-4">
+                        <button onclick="toggleDarkMode()" class="p-2 rounded-lg hover:bg-slate-200 dark:hover:bg-slate-700">
+                            <i class="fas fa-moon dark:hidden text-slate-600"></i>
+                            <i class="fas fa-sun hidden dark:block text-yellow-400"></i>
+                        </button>
+                        <button onclick="toggleMobileMenu()" class="text-slate-600 dark:text-slate-300 hover:text-primary">
+                            <i class="fas fa-bars text-2xl"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden glass dark:glass-dark border-t border-white/20">
+                <div class="px-4 pt-2 pb-6 space-y-2">
+                    <a href="#home" class="block px-4 py-3 rounded-lg hover:bg-white/50 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-200 font-medium" onclick="toggleMobileMenu()">होम</a>
+                    <a href="#services" class="block px-4 py-3 rounded-lg hover:bg-white/50 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-200 font-medium" onclick="toggleMobileMenu()">सेवाएं</a>
+                    <a href="#process" class="block px-4 py-3 rounded-lg hover:bg-white/50 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-200 font-medium" onclick="toggleMobileMenu()">प्रक्रिया</a>
+                    <a href="#contact" class="block px-4 py-3 rounded-lg hover:bg-white/50 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-200 font-medium" onclick="toggleMobileMenu()">संपर्क</a>
+                    <button onclick="showAdminLogin()" class="w-full mt-4 bg-primary text-white px-6 py-3 rounded-lg font-medium">Admin Login</button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <section id="home" class="relative pt-32 pb-20 lg:pt-40 lg:pb-32 overflow-hidden hero-gradient">
+            <!-- Background Elements -->
+            <div class="absolute inset-0 overflow-hidden pointer-events-none">
+                <div class="absolute -top-40 -right-40 w-96 h-96 bg-blue-400/20 rounded-full blur-3xl animate-pulse-slow"></div>
+                <div class="absolute top-40 -left-20 w-72 h-72 bg-amber-400/20 rounded-full blur-3xl animate-pulse-slow" style="animation-delay: 2s;"></div>
+                <div class="absolute bottom-0 right-20 w-80 h-80 bg-emerald-400/10 rounded-full blur-3xl"></div>
+            </div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <!-- Left Content -->
+                    <div class="space-y-8 animate-slide-up">
+                        <div class="inline-flex items-center space-x-2 bg-white/80 dark:bg-slate-800/80 backdrop-blur px-4 py-2 rounded-full shadow-sm border border-blue-100 dark:border-slate-700">
+                            <span class="flex h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                            <span class="text-sm font-medium text-slate-700 dark:text-slate-300">10+ वर्षों का विश्वसनीय अनुभव</span>
+                        </div>
+                        
+                        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-slate-900 dark:text-white">
+                            सरकारी एवं ऑनलाइन सेवाओं का <span class="gradient-text">विश्वसनीय केंद्र</span>
+                        </h1>
+                        
+                        <p class="text-lg md:text-xl text-slate-600 dark:text-slate-300 leading-relaxed max-w-2xl">
+                            Driving License, PAN Card, Udyam Registration, Scholarship Forms, College Admission, Income Certificate, Domicile Certificate, Banking Assistance और अन्य सभी ऑनलाइन सेवाएं एक ही छत के नीचे।
+                        </p>
+
+                        <div class="flex flex-col sm:flex-row gap-4">
+                            <a href="#contact" class="group bg-primary hover:bg-blue-700 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all shadow-lg shadow-blue-500/30 hover:shadow-blue-500/50 flex items-center justify-center gap-2">
+                                Apply Online
+                                <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                            </a>
+                            <a href="tel:7047246566" class="group bg-white dark:bg-slate-800 text-slate-800 dark:text-white border-2 border-slate-200 dark:border-slate-700 hover:border-secondary dark:hover:border-secondary px-8 py-4 rounded-full font-semibold text-lg transition-all flex items-center justify-center gap-2 hover:shadow-lg">
+                                <i class="fas fa-phone text-secondary"></i>
+                                Call Now
+                            </a>
+                        </div>
+
+                        <!-- Trust Badges -->
+                        <div class="flex items-center gap-6 pt-4">
+                            <div class="flex -space-x-3">
+                                <img src="https://ui-avatars.com/api/?name=Ram+Singh&background=1E40AF&color=fff" class="w-10 h-10 rounded-full border-2 border-white dark:border-slate-800" alt="Customer">
+                                <img src="https://ui-avatars.com/api/?name=Sita+Devi&background=F59E0B&color=fff" class="w-10 h-10 rounded-full border-2 border-white dark:border-slate-800" alt="Customer">
+                                <img src="https://ui-avatars.com/api/?name=Mohan+Lal&background=10B981&color=fff" class="w-10 h-10 rounded-full border-2 border-white dark:border-slate-800" alt="Customer">
+                                <div class="w-10 h-10 rounded-full border-2 border-white dark:border-slate-800 bg-slate-100 dark:bg-slate-700 flex items-center justify-center text-xs font-bold text-slate-600 dark:text-slate-300">+5k</div>
+                            </div>
+                            <div class="text-sm">
+                                <div class="font-semibold text-slate-900 dark:text-white">5000+ संतुष्ट ग्राहक</div>
+                                <div class="text-slate-500 dark:text-slate-400">पूरे गोहदा क्षेत्र में</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Illustration -->
+                    <div class="relative lg:h-[600px] flex items-center justify-center">
+                        <!-- Main Image Container -->
+                        <div class="relative w-full max-w-lg aspect-square">
+                            <!-- Floating Elements -->
+                            <div class="absolute top-0 right-0 w-20 h-20 bg-white dark:bg-slate-800 rounded-2xl shadow-xl flex items-center justify-center animate-float z-20 border border-blue-100 dark:border-slate-700">
+                                <i class="fas fa-id-card text-3xl text-primary"></i>
+                            </div>
+                            <div class="absolute top-20 left-0 w-16 h-16 bg-white dark:bg-slate-800 rounded-2xl shadow-xl flex items-center justify-center animate-float-delayed z-20 border border-amber-100 dark:border-slate-700">
+                                <i class="fas fa-file-signature text-2xl text-secondary"></i>
+                            </div>
+                            <div class="absolute bottom-32 left-0 w-20 h-20 bg-white dark:bg-slate-800 rounded-2xl shadow-xl flex items-center justify-center animate-float z-20 border border-emerald-100 dark:border-slate-700">
+                                <i class="fas fa-university text-3xl text-emerald-500"></i>
+                            </div>
+                            <div class="absolute bottom-0 right-20 w-16 h-16 bg-white dark:bg-slate-800 rounded-2xl shadow-xl flex items-center justify-center animate-float-delayed z-20 border border-blue-100 dark:border-slate-700">
+                                <i class="fas fa-mobile-alt text-2xl text-primary"></i>
+                            </div>
+
+                            <!-- Central Graphic -->
+                            <div class="absolute inset-10 bg-gradient-to-br from-blue-500/20 to-amber-500/20 rounded-full blur-3xl"></div>
+                            <div class="relative z-10 bg-white/40 dark:bg-slate-800/40 backdrop-blur-xl rounded-3xl border border-white/50 dark:border-slate-700/50 shadow-2xl p-8 h-full flex items-center justify-center">
+                                <div class="text-center space-y-6">
+                                    <div class="w-32 h-32 mx-auto bg-gradient-to-br from-primary to-blue-600 rounded-2xl flex items-center justify-center shadow-2xl shadow-blue-500/40 transform rotate-3 hover:rotate-6 transition-transform duration-500">
+                                        <i class="fas fa-laptop-house text-6xl text-white"></i>
+                                    </div>
+                                    <div class="space-y-2">
+                                        <h3 class="text-2xl font-bold text-slate-800 dark:text-white">डिजिटल सेवा केंद्र</h3>
+                                        <p class="text-slate-600 dark:text-slate-400">सरकारी एवं निजी सेवाओं के लिए एक स्थान</p>
+                                    </div>
+                                    <div class="grid grid-cols-2 gap-4 pt-4">
+                                        <div class="bg-white/60 dark:bg-slate-700/60 rounded-xl p-3 backdrop-blur">
+                                            <div class="text-2xl font-bold text-primary">24/7</div>
+                                            <div class="text-xs text-slate-600 dark:text-slate-400">सहायता उपलब्ध</div>
+                                        </div>
+                                        <div class="bg-white/60 dark:bg-slate-700/60 rounded-xl p-3 backdrop-blur">
+                                            <div class="text-2xl font-bold text-secondary">100%</div>
+                                            <div class="text-xs text-slate-600 dark:text-slate-400">सुरक्षित</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trust Stats Section -->
+        <section class="py-12 bg-white dark:bg-slate-800 relative overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-r from-blue-50/50 to-amber-50/50 dark:from-slate-900 dark:to-slate-800"></div>
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                    <div class="text-center group">
+                        <div class="text-4xl md:text-5xl font-bold text-primary mb-2 group-hover:scale-110 transition-transform counter" data-target="5000">0</div>
+                        <div class="text-sm font-medium text-slate-600 dark:text-slate-400 uppercase tracking-wide">Applications Processed</div>
+                    </div>
+                    <div class="text-center group">
+                        <div class="text-4xl md:text-5xl font-bold text-secondary mb-2 group-hover:scale-110 transition-transform counter" data-target="98">0%</div>
+                        <div class="text-sm font-medium text-slate-600 dark:text-slate-400 uppercase tracking-wide">Customer Satisfaction</div>
+                    </div>
+                    <div class="text-center group">
+                        <div class="text-4xl md:text-5xl font-bold text-emerald-500 mb-2 group-hover:scale-110 transition-transform counter" data-target="10">0+</div>
+                        <div class="text-sm font-medium text-slate-600 dark:text-slate-400 uppercase tracking-wide">Years Experience</div>
+                    </div>
+                    <div class="text-center group">
+                        <div class="text-4xl md:text-5xl font-bold text-purple-600 mb-2 group-hover:scale-110 transition-transform counter" data-target="20">0+</div>
+                        <div class="text-sm font-medium text-slate-600 dark:text-slate-400 uppercase tracking-wide">Services Available</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="py-20 bg-slate-50 dark:bg-slate-900 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <span class="inline-block px-4 py-1 rounded-full bg-blue-100 dark:bg-blue-900/30 text-primary font-semibold text-sm mb-4">हमारी सेवाएं</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">व्यापक डिजिटल सेवाएं</h2>
+                    <p class="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">सभी प्रकार की सरकारी और निजी ऑनलाइन सेवाएं तेज़, सुरक्षित और विश्वसनीय तरीके से</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" id="services-grid">
+                    <!-- Services will be injected via JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us -->
+        <section class="py-20 bg-white dark:bg-slate-800 relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary via-secondary to-emerald-500"></div>
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">क्यों चुनें हमें?</h2>
+                    <p class="text-slate-600 dark:text-slate-400">विशेषज्ञता, विश्वसनीयता और ग्राहक संतुष्टि हमारी पहचान</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="glass-card p-8 rounded-2xl hover:shadow-2xl transition-all duration-300 group">
+                        <div class="w-14 h-14 bg-blue-100 dark:bg-blue-900/30 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fas fa-bolt text-2xl text-primary"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Fast Processing</h3>
+                        <p class="text-slate-600 dark:text-slate-400">सभी आवेदन तेजी से प्रोसेस किए जाते हैं। समय की बचत और त्वरित परिणाम।</p>
+                    </div>
+
+                    <div class="glass-card p-8 rounded-2xl hover:shadow-2xl transition-all duration-300 group">
+                        <div class="w-14 h-14 bg-amber-100 dark:bg-amber-900/30 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fas fa-shield-alt text-2xl text-secondary"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Trusted Service</h3>
+                        <p class="text-slate-600 dark:text-slate-400">10+ वर्षों का अनुभव और 5000+ संतुष्ट ग्राहक। विश्वसनीयता की गारंटी।</p>
+                    </div>
+
+                    <div class="glass-card p-8 rounded-2xl hover:shadow-2xl transition-all duration-300 group">
+                        <div class="w-14 h-14 bg-emerald-100 dark:bg-emerald-900/30 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fas fa-user-tie text-2xl text-emerald-500"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Experienced Support</h3>
+                        <p class="text-slate-600 dark:text-slate-400">विशेषज्ञ टीम द्वारा सहायता। हर चरण में मार्गदर्शन और सहायता।</p>
+                    </div>
+
+                    <div class="glass-card p-8 rounded-2xl hover:shadow-2xl transition-all duration-300 group">
+                        <div class="w-14 h-14 bg-purple-100 dark:bg-purple-900/30 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fas fa-tags text-2xl text-purple-600"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Affordable Pricing</h3>
+                        <p class="text-slate-600 dark:text-slate-400">प्रतिस्पर्धी दरों पर उच्च गुणवत्ता वाली सेवाएं। कोई छिपा शुल्क नहीं।</p>
+                    </div>
+
+                    <div class="glass-card p-8 rounded-2xl hover:shadow-2xl transition-all duration-300 group">
+                        <div class="w-14 h-14 bg-red-100 dark:bg-red-900/30 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fas fa-lock text-2xl text-red-500"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Secure Documents</h3>
+                        <p class="text-slate-600 dark:text-slate-400">आपके दस्तावेज़ पूर्णतः सुरक्षित। गोपनीयता और सुरक्षा की गारंटी।</p>
+                    </div>
+
+                    <div class="glass-card p-8 rounded-2xl hover:shadow-2xl transition-all duration-300 group">
+                        <div class="w-14 h-14 bg-cyan-100 dark:bg-cyan-900/30 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fas fa-headset text-2xl text-cyan-600"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Customer Assistance</h3>
+                        <p class="text-slate-600 dark:text-slate-400">हमेशा उपलब्ध सहायता टीम। किसी भी समस्या के लिए तत्काल सहायता।</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Process Timeline -->
+        <section id="process" class="py-20 bg-slate-50 dark:bg-slate-900 relative">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <span class="inline-block px-4 py-1 rounded-full bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400 font-semibold text-sm mb-4">प्रक्रिया</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">आवेदन प्रक्रिया</h2>
+                    <p class="text-slate-600 dark:text-slate-400">5 सरल चरणों में अपनी सेवा प्राप्त करें</p>
+                </div>
+
+                <div class="relative">
+                    <!-- Vertical Line -->
+                    <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full w-1 timeline-line rounded-full"></div>
+
+                    <!-- Steps -->
+                    <div class="space-y-12 relative">
+                        <!-- Step 1 -->
+                        <div class="relative flex flex-col md:flex-row items-center">
+                            <div class="flex-1 md:text-right md:pr-12 mb-4 md:mb-0">
+                                <div class="glass-card p-6 rounded-2xl inline-block md:text-right">
+                                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">1. सेवा चुनें</h3>
+                                    <p class="text-slate-600 dark:text-slate-400">अपनी आवश्यक सेवा का चयन करें और आवश्यक दस्तावेजों की सूची देखें।</p>
+                                </div>
+                            </div>
+                            <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white font-bold text-xl z-10 shadow-lg shadow-blue-500/50 border-4 border-white dark:border-slate-900">
+                                1
+                            </div>
+                            <div class="flex-1 md:pl-12 mt-4 md:mt-0 hidden md:block"></div>
+                        </div>
+
+                        <!-- Step 2 -->
+                        <div class="relative flex flex-col md:flex-row items-center">
+                            <div class="flex-1 md:pr-12 mb-4 md:mb-0 hidden md:block"></div>
+                            <div class="w-12 h-12 bg-secondary rounded-full flex items-center justify-center text-white font-bold text-xl z-10 shadow-lg shadow-amber-500/50 border-4 border-white dark:border-slate-900">
+                                2
+                            </div>
+                            <div class="flex-1 md:pl-12 mt-4 md:mt-0">
+                                <div class="glass-card p-6 rounded-2xl">
+                                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">2. दस्तावेज़ अपलोड करें</h3>
+                                    <p class="text-slate-600 dark:text-slate-400">आवश्यक दस्तावेज़ हमारे केंद्र पर जमा करें या डिजिटल रूप से साझा करें।</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 3 -->
+                        <div class="relative flex flex-col md:flex-row items-center">
+                            <div class="flex-1 md:text-right md:pr-12 mb-4 md:mb-0">
+                                <div class="glass-card p-6 rounded-2xl inline-block md:text-right">
+                                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">3. सत्यापन</h3>
+                                    <p class="text-slate-600 dark:text-slate-400">हमारी टीम द्वारा दस्तावेज़ों की जांच और सत्यापन किया जाएगा।</p>
+                                </div>
+                            </div>
+                            <div class="w-12 h-12 bg-emerald-500 rounded-full flex items-center justify-center text-white font-bold text-xl z-10 shadow-lg shadow-emerald-500/50 border-4 border-white dark:border-slate-900">
+                                3
+                            </div>
+                            <div class="flex-1 md:pl-12 mt-4 md:mt-0 hidden md:block"></div>
+                        </div>
+
+                        <!-- Step 4 -->
+                        <div class="relative flex flex-col md:flex-row items-center">
+                            <div class="flex-1 md:pr-12 mb-4 md:mb-0 hidden md:block"></div>
+                            <div class="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center text-white font-bold text-xl z-10 shadow-lg shadow-purple-500/50 border-4 border-white dark:border-slate-900">
+                                4
+                            </div>
+                            <div class="flex-1 md:pl-12 mt-4 md:mt-0">
+                                <div class="glass-card p-6 rounded-2xl">
+                                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">4. प्रसंस्करण</h3>
+                                    <p class="text-slate-600 dark:text-slate-400">आवेदन को संबंधित विभाग में जमा किया जाएगा और प्रक्रिया की जाएगी।</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 5 -->
+                        <div class="relative flex flex-col md:flex-row items-center">
+                            <div class="flex-1 md:text-right md:pr-12 mb-4 md:mb-0">
+                                <div class="glass-card p-6 rounded-2xl inline-block md:text-right">
+                                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">5. पूर्णता</h3>
+                                    <p class="text-slate-600 dark:text-slate-400">सेवा पूरी होने पर आपको सूचित किया जाएगा और दस्तावेज़ सौंपे जाएंगे।</p>
+                                </div>
+                            </div>
+                            <div class="w-12 h-12 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center text-white font-bold text-xl z-10 shadow-lg border-4 border-white dark:border-slate-900">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <div class="flex-1 md:pl-12 mt-4 md:mt-0 hidden md:block"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="py-20 bg-white dark:bg-slate-800 overflow-hidden">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">ग्राहक प्रशंसापत्र</h2>
+                    <p class="text-slate-600 dark:text-slate-400">हमारे संतुष्ट ग्राहक क्या कहते हैं</p>
+                </div>
+
+                <div class="relative">
+                    <div class="flex overflow-x-auto gap-6 pb-4 scrollbar-hide snap-x snap-mandatory" id="testimonials-container">
+                        <!-- Testimonials injected via JS -->
+                    </div>
+                    
+                    <!-- Navigation Dots -->
+                    <div class="flex justify-center gap-2 mt-6" id="testimonial-dots"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery -->
+        <section class="py-20 bg-slate-50 dark:bg-slate-900">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">गैलरी</h2>
+                    <p class="text-slate-600 dark:text-slate-400">हमारे केंद्र की झलकियाँ</p>
+                </div>
+
+                <div class="masonry-grid" id="gallery-grid">
+                    <!-- Gallery items injected via JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 bg-white dark:bg-slate-800 relative overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-br from-blue-50/50 to-amber-50/50 dark:from-slate-900 dark:to-slate-800 pointer-events-none"></div>
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">संपर्क करें</h2>
+                    <p class="text-slate-600 dark:text-slate-400">किसी भी सहायता के लिए हमसे संपर्क करें</p>
+                </div>
+
+                <div class="grid lg:grid-cols-2 gap-12">
+                    <!-- Contact Info -->
+                    <div class="space-y-8">
+                        <div class="glass-card p-8 rounded-2xl">
+                            <div class="space-y-6">
+                                <div class="flex items-start space-x-4">
+                                    <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                                        <i class="fas fa-map-marker-alt text-xl text-primary"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-lg font-semibold text-slate-900 dark:text-white mb-1">पता</h3>
+                                        <p class="text-slate-600 dark:text-slate-400">यूनीयन बैंक के सामने,<br>श्री आदिनाथ कॉम्प्लेक्स,<br>गोहदा, प्लाट पिपरिया</p>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-start space-x-4">
+                                    <div class="w-12 h-12 bg-secondary/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                                        <i class="fas fa-phone text-xl text-secondary"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-lg font-semibold text-slate-900 dark:text-white mb-1">फोन</h3>
+                                        <p class="text-slate-600 dark:text-slate-400 text-lg font-medium">7047246566</p>
+                                        <p class="text-sm text-slate-500">हेमराज राय (संचालक)</p>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-start space-x-4">
+                                    <div class="w-12 h-12 bg-emerald-500/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                                        <i class="fab fa-whatsapp text-xl text-emerald-500"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-lg font-semibold text-slate-900 dark:text-white mb-1">व्हाट्सएप</h3>
+                                        <a href="https://wa.me/917047246566" class="inline-flex items-center space-x-2 bg-emerald-500 text-white px-4 py-2 rounded-lg hover:bg-emerald-600 transition-colors">
+                                            <span>WhatsApp पर संदेश भेजें</span>
+                                            <i class="fas fa-external-link-alt text-sm"></i>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-start space-x-4">
+                                    <div class="w-12 h-12 bg-blue-500/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                                        <i class="fas fa-clock text-xl text-blue-500"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-lg font-semibold text-slate-900 dark:text-white mb-1">कार्य समय</h3>
+                                        <p class="text-slate-600 dark:text-slate-400">सोमवार - शनिवार: 9:00 AM - 7:00 PM</p>
+                                        <p class="text-slate-600 dark:text-slate-400">रविवार: 10:00 AM - 4:00 PM</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Map Placeholder -->
+                        <div class="glass-card rounded-2xl overflow-hidden h-64 relative">
+                            <iframe 
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3571.5584933447137!2d78.1564!3d26.4313!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjbCsDI1JzUyLjciTiA3OMKwMDknMjMuMCJF!5e0!3m2!1sen!2sin!4v1" 
+                                width="100%" 
+                                height="100%" 
+                                style="border:0; filter: grayscale(100%) contrast(1.2) opacity(0.8);" 
+                                allowfullscreen="" 
+                                loading="lazy"
+                                class="dark:opacity-60">
+                            </iframe>
+                            <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+                                <div class="bg-white dark:bg-slate-800 px-4 py-2 rounded-lg shadow-lg">
+                                    <span class="font-semibold text-slate-800 dark:text-white">📍 Swastik Online</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form -->
+                    <div class="glass-card p-8 rounded-2xl">
+                        <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-6">संदेश भेजें</h3>
+                        <form id="contact-form" class="space-y-6" onsubmit="handleContactSubmit(event)">
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">नाम</label>
+                                    <input type="text" required class="w-full px-4 py-3 rounded-lg bg-slate-50 dark:bg-slate-700 border border-slate-200 dark:border-slate-600 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all dark:text-white" placeholder="आपका नाम">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">मोबाइल</label>
+                                    <input type="tel" required class="w-full px-4 py-3 rounded-lg bg-slate-50 dark:bg-slate-700 border border-slate-200 dark:border-slate-600 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all dark:text-white" placeholder="मोबाइल नंबर">
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">सेवा चुनें</label>
+                                <select class="w-full px-4 py-3 rounded-lg bg-slate-50 dark:bg-slate-700 border border-slate-200 dark:border-slate-600 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all dark:text-white">
+                                    <option>Driving License</option>
+                                    <option>PAN Card</option>
+                                    <option>Aadhaar Services</option>
+                                    <option>Udyam Registration</option>
+                                    <option>Income Certificate</option>
+                                    <option>अन्य</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">संदेश</label>
+                                <textarea rows="4" class="w-full px-4 py-3 rounded-lg bg-slate-50 dark:bg-slate-700 border border-slate-200 dark:border-slate-600 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all dark:text-white" placeholder="आपका संदेश..."></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full bg-primary hover:bg-blue-700 text-white font-semibold py-4 rounded-lg transition-all shadow-lg shadow-blue-500/30 hover:shadow-blue-500/50 flex items-center justify-center gap-2 group">
+                                <span>भेजें</span>
+                                <i class="fas fa-paper-plane group-hover:translate-x-1 transition-transform"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-slate-900 text-slate-300 py-12 border-t border-slate-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid md:grid-cols-4 gap-8 mb-8">
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
+                                <span class="text-white font-bold">स्वा</span>
+                            </div>
+                            <div>
+                                <div class="text-lg font-bold text-white">स्वास्तिक ऑनलाइन</div>
+                                <div class="text-xs text-slate-400">Swastik Online</div>
+                            </div>
+                        </div>
+                        <p class="text-sm text-slate-400">आपकी सभी ऑनलाइन सेवाओं का विश्वसनीय केंद्र। 10+ वर्षों का अनुभव, 5000+ संतुष्ट ग्राहक।</p>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-white font-semibold mb-4">Quick Links</h4>
+                        <ul class="space-y-2 text-sm">
+                            <li><a href="#home" class="hover:text-secondary transition-colors">होम</a></li>
+                            <li><a href="#services" class="hover:text-secondary transition-colors">सेवाएं</a></li>
+                            <li><a href="#process" class="hover:text-secondary transition-colors">प्रक्रिया</a></li>
+                            <li><a href="#contact" class="hover:text-secondary transition-colors">संपर्क</a></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 class="text-white font-semibold mb-4">Our Services</h4>
+                        <ul class="space-y-2 text-sm">
+                            <li><a href="#" class="hover:text-secondary transition-colors">Driving License</a></li>
+                            <li><a href="#" class="hover:text-secondary transition-colors">PAN Card</a></li>
+                            <li><a href="#" class="hover:text-secondary transition-colors">Udyam Registration</a></li>
+                            <li><a href="#" class="hover:text-secondary transition-colors">Scholarship Forms</a></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 class="text-white font-semibold mb-4">Contact</h4>
+                        <ul class="space-y-2 text-sm">
+                            <li class="flex items-center gap-2"><i class="fas fa-phone text-secondary"></i> 7047246566</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-map-marker-alt text-secondary"></i> गोहदा, प्लाट पिपरिया</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-user text-secondary"></i> हेमराज राय</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                    <p class="text-sm text-slate-500">&copy; 2024 स्वास्तिक ऑनलाइन. सर्वाधिकार सुरक्षित.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary transition-colors">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary transition-colors">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary transition-colors">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Admin Portal Container -->
+    <div id="admin-portal" class="hidden">
+        <!-- Admin Login -->
+        <div id="admin-login" class="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 flex items-center justify-center p-4">
+            <div class="glass-card w-full max-w-md p-8 rounded-2xl shadow-2xl">
+                <div class="text-center mb-8">
+                    <div class="w-16 h-16 bg-primary rounded-xl flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-lock text-2xl text-white"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Admin Portal</h2>
+                    <p class="text-slate-600 dark:text-slate-400">स्वास्तिक ऑनलाइन - सुरक्षित प्रवेश</p>
+                </div>
+                
+                <form onsubmit="handleAdminLogin(event)" class="space-y-6">
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">Username</label>
+                        <input type="text" id="admin-username" required class="w-full px-4 py-3 rounded-lg bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-600 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all dark:text-white" placeholder="Enter username">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">Password</label>
+                        <input type="password" id="admin-password" required class="w-full px-4 py-3 rounded-lg bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-600 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all dark:text-white" placeholder="Enter password">
+                    </div>
+                    <button type="submit" class="w-full bg-primary hover:bg-blue-700 text-white font-semibold py-3 rounded-lg transition-all shadow-lg">
+                        Login
+                    </button>
+                </form>
+                
+                <button onclick="showPublicSite()" class="w-full mt-4 text-slate-600 dark:text-slate-400 hover:text-primary transition-colors text-sm">
+                    <i class="fas fa-arrow-left mr-2"></i>Back to Website
+                </button>
+            </div>
+        </div>
+
+        <!-- Admin Dashboard -->
+        <div id="admin-dashboard" class="hidden min-h-screen bg-slate-50 dark:bg-slate-900">
+            <!-- Admin Sidebar -->
+            <aside class="fixed left-0 top-0 h-full w-64 bg-white dark:bg-slate-800 border-r border-slate-200 dark:border-slate-700 z-40 transform -translate-x-full md:translate-x-0 transition-transform duration-300" id="admin-sidebar">
+                <div class="p-6 border-b border-slate-200 dark:border-slate-700">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
+                            <span class="text-white font-bold text-sm">स्वा</span>
+                        </div>
+                        <div>
+                            <div class="font-bold text-slate-900 dark:text-white">Admin Panel</div>
+                            <div class="text-xs text-slate-500">Swastik Online</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <nav class="p-4 space-y-2">
+                    <button onclick="switchAdminView('dashboard')" class="admin-nav-btn w-full flex items-center space-x-3 px-4 py-3 rounded-lg bg-primary/10 text-primary font-medium transition-colors">
+                        <i class="fas fa-home w-5"></i>
+                        <span>Dashboard</span>
+                    </button>
+                    <button onclick="switchAdminView('applications')" class="admin-nav-btn w-full flex items-center space-x-3 px-4 py-3 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-600 dark:text-slate-300 transition-colors">
+                        <i class="fas fa-file-alt w-5"></i>
+                        <span>Applications</span>
+                    </button>
+                    <button onclick="switchAdminView('customers')" class="admin-nav-btn w-full flex items-center space-x-3 px-4 py-3 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-600 dark:text-slate-300 transition-colors">
+                        <i class="fas fa-users w-5"></i>
+                        <span>Customers</span>
+                    </button>
+                    <button onclick="switchAdminView('services')" class="admin-nav-btn w-full flex items-center space-x-3 px-4 py-3 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-600 dark:text-slate-300 transition-colors">
+                        <i class="fas fa-cogs w-5"></i>
+                        <span>Services</span>
+                    </button>
+                    <button onclick="switchAdminView('documents')" class="admin-nav-btn w-full flex items-center space-x-3 px-4 py-3 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-600 dark:text-slate-300 transition-colors">
+                        <i class="fas fa-folder-open w-5"></i>
+                        <span>Documents</span>
+                    </button>
+                    <button onclick="switchAdminView('content')" class="admin-nav-btn w-full flex items-center space-x-3 px-4 py-3 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-600 dark:text-slate-300 transition-colors">
+                        <i class="fas fa-edit w-5"></i>
+                        <span>Content</span>
+                    </button>
+                </nav>
+
+                <div class="absolute bottom-0 left-0 right-0 p-4 border-t border-slate-200 dark:border-slate-700">
+                    <button onclick="logoutAdmin()" class="w-full flex items-center space-x-3 px-4 py-3 rounded-lg hover:bg-red-50 dark:hover:bg-red-900/20 text-red-600 transition-colors">
+                        <i class="fas fa-sign-out-alt w-5"></i>
+                        <span>Logout</span>
+                    </button>
+                </div>
+            </aside>
+
+            <!-- Admin Main Content -->
+            <main class="md:ml-64 min-h-screen">
+                <!-- Top Bar -->
+                <header class="bg-white dark:bg-slate-800 border-b border-slate-200 dark:border-slate-700 sticky top-0 z-30 px-8 py-4 flex justify-between items-center">
+                    <div class="flex items-center gap-4">
+                        <button onclick="toggleAdminSidebar()" class="md:hidden text-slate-600 dark:text-slate-300">
+                            <i class="fas fa-bars text-xl"></i>
+                        </button>
+                        <h1 id="admin-page-title" class="text-xl font-bold text-slate-900 dark:text-white">Dashboard</h1>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <button onclick="toggleDarkMode()" class="p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700">
+                            <i class="fas fa-moon dark:hidden"></i>
+                            <i class="fas fa-sun hidden dark:block text-yellow-400"></i>
+                        </button>
+                        <div class="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white font-bold">
+                            HR
+                        </div>
+                    </div>
+                </header>
+
+                <!-- Dashboard Content -->
+                <div class="p-8" id="admin-content">
+                    <!-- Stats Cards -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                        <div class="glass-card p-6 rounded-xl">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <p class="text-sm text-slate-600 dark:text-slate-400">Total Applications</p>
+                                    <h3 class="text-2xl font-bold text-slate-900 dark:text-white mt-1">5,247</h3>
+                                </div>
+                                <div class="w-10 h-10 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center text-primary">
+                                    <i class="fas fa-file-alt"></i>
+                                </div>
+                            </div>
+                            <div class="mt-4 flex items-center text-sm text-emerald-500">
+                                <i class="fas fa-arrow-up mr-1"></i>
+                                <span>12% this month</span>
+                            </div>
+                        </div>
+
+                        <div class="glass-card p-6 rounded-xl">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <p class="text-sm text-slate-600 dark:text-slate-400">Pending</p>
+                                    <h3 class="text-2xl font-bold text-slate-900 dark:text-white mt-1">48</h3>
+                                </div>
+                                <div class="w-10 h-10 bg-amber-100 dark:bg-amber-900/30 rounded-lg flex items-center justify-center text-secondary">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                            </div>
+                            <div class="mt-4 flex items-center text-sm text-amber-500">
+                                <span>Requires attention</span>
+                            </div>
+                        </div>
+
+                        <div class="glass-card p-6 rounded-xl">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <p class="text-sm text-slate-600 dark:text-slate-400">Completed</p>
+                                    <h3 class="text-2xl font-bold text-slate-900 dark:text-white mt-1">5,124</h3>
+                                </div>
+                                <div class="w-10 h-10 bg-emerald-100 dark:bg-emerald-900/30 rounded-lg flex items-center justify-center text-emerald-500">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                            </div>
+                            <div class="mt-4 flex items-center text-sm text-emerald-500">
+                                <i class="fas fa-arrow-up mr-1"></i>
+                                <span>98% success rate</span>
+                            </div>
+                        </div>
+
+                        <div class="glass-card p-6 rounded-xl">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <p class="text-sm text-slate-600 dark:text-slate-400">Today's Revenue</p>
+                                    <h3 class="text-2xl font-bold text-slate-900 dark:text-white mt-1">₹4,250</h3>
+                                </div>
+                                <div class="w-10 h-10 bg-purple-100 dark:bg-purple-900/30 rounded-lg flex items-center justify-center text-purple-600">
+                                    <i class="fas fa-rupee-sign"></i>
+                                </div>
+                            </div>
+                            <div class="mt-4 flex items-center text-sm text-emerald-500">
+                                <i class="fas fa-arrow-up mr-1"></i>
+                                <span>8% vs yesterday</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Recent Applications Table -->
+                    <div class="glass-card rounded-xl overflow-hidden">
+                        <div class="p-6 border-b border-slate-200 dark:border-slate-700 flex justify-between items-center">
+                            <h3 class="text-lg font-bold text-slate-900 dark:text-white">Recent Applications</h3>
+                            <button class="text-primary hover:text-blue-700 text-sm font-medium">View All</button>
+                        </div>
+                        <div class="overflow-x-auto">
+                            <table class="w-full">
+                                <thead class="bg-slate-50 dark:bg-slate-800/50 text-left">
+                                    <tr>
+                                        <th class="px-6 py-4 text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase">ID</th>
+                                        <th class="px-6 py-4 text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase">Customer</th>
+                                        <th class="px-6 py-4 text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase">Service</th>
+                                        <th class="px-6 py-4 text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase">Status</th>
+                                        <th class="px-6 py-4 text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase">Date</th>
+                                        <th class="px-6 py-4 text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase">Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="admin-table-body" class="divide-y divide-slate-200 dark:divide-slate-700">
+                                    <!-- Populated via JS -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="fixed bottom-4 right-4 transform translate-y-20 opacity-0 transition-all duration-300 z-50">
+        <div class="glass-card px-6 py-4 rounded-lg shadow-2xl flex items-center space-x-3 bg-white dark:bg-slate-800">
+            <i class="fas fa-check-circle text-emerald-500 text-xl"></i>
+            <span id="toast-message" class="font-medium text-slate-800 dark:text-white">Success!</span>
+        </div>
+    </div>
+
+    <script>
+        // Data
+        const services = [
+            { icon: 'fa-id-card', title: 'Driving License', desc: 'नया लाइसेंस, रिन्यूवल, डुप्लीकेट और अन्य सेवाएं', color: 'blue' },
+            { icon: 'fa-credit-card', title: 'PAN Card', desc: 'नया PAN आवेदन, करेक्शन, डुप्लीकेट PAN कार्ड', color: 'amber' },
+            { icon: 'fa-fingerprint', title: 'Aadhaar Services', desc: 'Aadhaar अपडेट, पता बदलाव, मोबाइल लिंक', color: 'emerald' },
+            { icon: 'fa-industry', title: 'Udyam Registration', desc: 'MSME रजिस्ट्रेशन, Udyam सर्टिफिकेट', color: 'purple' },
+            { icon: 'fa-file-invoice-dollar', title: 'Income Certificate', desc: 'आय प्रमाण पत्र बनवाएं तेजी से', color: 'red' },
+            { icon: 'fa-home', title: 'Domicile Certificate', desc: 'मूल निवास प्रमाण पत्र आवेदन', color: 'cyan' },
+            { icon: 'fa-passport', title: 'Passport Photo', desc: 'प्रोफेशनल पासपोर्ट साइज फोटो, लेमिनेशन', color: 'pink' },
+            { icon: 'fa-keyboard', title: 'Typing Services', desc: 'हिंदी/इंग्लिश टाइपिंग, प्रिंटिंग सेवाएं', color: 'indigo' },
+            { icon: 'fa-graduation-cap', title: 'Scholarship Forms', desc: 'प्री-मैट्रिक, पोस्ट-मैट्रिक छात्रवृत्ति', color: 'teal' },
+            { icon: 'fa-university', title: 'College Admission', desc: 'ऑनलाइन एडमिशन फॉर्म भरना', color: 'orange' },
+            { icon: 'fa-landmark', title: 'Bank Account', desc: 'बैंक खाता खोलना, Passbook, चेक बुक', color: 'green' },
+            { icon: 'fa-laptop', title: 'Online Applications', desc: 'सभी प्रकार के ऑनलाइन फॉर्म और आवेदन', color: 'blue' }
+        ];
+
+        const testimonials = [
+            { name: 'राम सिंह', role: 'किसान', text: 'बहुत ही अच्छी सेवा। मेरा आय प्रमाण पत्र 2 दिन में बनकर तैयार हो गया।', rating: 5 },
+            { name: 'सीता देवी', role: 'गृहिणी', text: 'मेरे बेटे की स्कॉलरशिप फॉर्म भरवाने में बहुत मदद मिली। धन्यवाद!', rating: 5 },
+            { name: 'मोहन लाल', role: 'व्यापारी', text: 'Udyam रजिस्ट्रेशन बहुत आसानी से हो गया। पेशेवर सेवा।', rating: 5 },
+            { name: 'कमला देवी', role: 'छात्रा', text: 'कॉलेज एडमिशन फॉर्म में कोई दिक्कत नहीं हुई। बहुत सहयोगी स्टाफ।', rating: 5 },
+            { name: 'रामेश्वर प्रसाद', role: 'सेवानिवृत्त', text: 'DL रिन्यूवल के लिए बहुत अच्छी सेवा। वरिष्ठ नागरिकों के लिए विशेष ध्यान।', rating: 4 },
+            { name: 'पवन कुमार', role: 'छात्र', text: 'PAN कार्ड बनवाया, बहुत तेजी से काम हुआ।', rating: 5 }
+        ];
+
+        const galleryImages = [
+            { src: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=400&h=300&fit=crop', title: 'Office Interior' },
+            { src: 'https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=400&h=500&fit=crop', title: 'Service Desk' },
+            { src: 'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=400&h=300&fit=crop', title: 'Customer Support' },
+            { src: 'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=400&h=400&fit=crop', title: 'Document Processing' },
+            { src: 'https://images.unsplash.com/photo-1497215842964-222b430dc094?w=400&h=300&fit=crop', title: 'Work Space' },
+            { src: 'https://images.unsplash.com/photo-1606857521015-7f9fcf423740?w=400&h=350&fit=crop', title: 'Reception Area' }
+        ];
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            renderServices();
+            renderTestimonials();
+            renderGallery();
+            initCounters();
+            initScrollAnimations();
+            
+            // Check dark mode preference
+            if (localStorage.getItem('darkMode') === 'true') {
+                document.documentElement.classList.add('dark');
+            }
+        });
+
+        // Render Functions
+        function renderServices() {
+            const grid = document.getElementById('services-grid');
+            const colorMap = {
+                'blue': { bg: 'bg-blue-100', darkBg: 'dark:bg-blue-900/30', text: 'text-blue-600', darkText: 'dark:text-blue-400' },
+                'amber': { bg: 'bg-amber-100', darkBg: 'dark:bg-amber-900/30', text: 'text-amber-600', darkText: 'dark:text-amber-400' },
+                'emerald': { bg: 'bg-emerald-100', darkBg: 'dark:bg-emerald-900/30', text: 'text-emerald-600', darkText: 'dark:text-emerald-400' },
+                'purple': { bg: 'bg-purple-100', darkBg: 'dark:bg-purple-900/30', text: 'text-purple-600', darkText: 'dark:text-purple-400' },
+                'red': { bg: 'bg-red-100', darkBg: 'dark:bg-red-900/30', text: 'text-red-600', darkText: 'dark:text-red-400' },
+                'cyan': { bg: 'bg-cyan-100', darkBg: 'dark:bg-cyan-900/30', text: 'text-cyan-600', darkText: 'dark:text-cyan-400' },
+                'pink': { bg: 'bg-pink-100', darkBg: 'dark:bg-pink-900/30', text: 'text-pink-600', darkText: 'dark:text-pink-400' },
+                'indigo': { bg: 'bg-indigo-100', darkBg: 'dark:bg-indigo-900/30', text: 'text-indigo-600', darkText: 'dark:text-indigo-400' },
+                'teal': { bg: 'bg-teal-100', darkBg: 'dark:bg-teal-900/30', text: 'text-teal-600', darkText: 'dark:text-teal-400' },
+                'orange': { bg: 'bg-orange-100', darkBg: 'dark:bg-orange-900/30', text: 'text-orange-600', darkText: 'dark:text-orange-400' },
+                'green': { bg: 'bg-green-100', darkBg: 'dark:bg-green-900/30', text: 'text-green-600', darkText: 'dark:text-green-400' }
+            };
+            grid.innerHTML = services.map(service => {
+                const colors = colorMap[service.color];
+                return `
+                <div class="service-card glass-card p-6 rounded-2xl transition-all duration-300 cursor-pointer group">
+                    <div class="w-14 h-14 ${colors.bg} ${colors.darkBg} rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fas ${service.icon} text-2xl ${colors.text} ${colors.darkText}"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">${service.title}</h3>
+                    <p class="text-slate-600 dark:text-slate-400 text-sm mb-4">${service.desc}</p>
+                    <button class="text-primary font-semibold text-sm flex items-center gap-2 group-hover:gap-3 transition-all">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            `;
+            }).join('');
+        }
+
+        function renderTestimonials() {
+            const container = document.getElementById('testimonials-container');
+            container.innerHTML = testimonials.map((t, i) => {
+                const stars = Array.from({length: t.rating}, () => '<i class="fas fa-star text-secondary"></i>').join('');
+                return `
+                <div class="snap-center shrink-0 w-full md:w-96 glass-card p-6 rounded-2xl">
+                    <div class="flex items-center gap-1 mb-4">
+                        ${stars}
+                    </div>
+                    <p class="text-slate-700 dark:text-slate-300 mb-6 italic">"${t.text}"</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-gradient-to-br from-primary to-blue-600 rounded-full flex items-center justify-center text-white font-bold">
+                            ${t.name.charAt(0)}
+                        </div>
+                        <div>
+                            <div class="font-bold text-slate-900 dark:text-white">${t.name}</div>
+                            <div class="text-sm text-slate-500">${t.role}</div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            }).join('');
+
+            // Add dots
+            const dotsContainer = document.getElementById('testimonial-dots');
+            dotsContainer.innerHTML = testimonials.map((_, i) => `
+                <button onclick="scrollToTestimonial(${i})" class="w-2 h-2 rounded-full bg-slate-300 dark:bg-slate-600 hover:bg-primary transition-colors"></button>
+            `).join('');
+        }
+
+        function renderGallery() {
+            const grid = document.getElementById('gallery-grid');
+            grid.innerHTML = galleryImages.map(img => `
+                <div class="break-inside-avoid mb-6 group">
+                    <div class="glass-card rounded-xl overflow-hidden relative">
+                        <img src="${img.src}" alt="${img.title}" class="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+                            <span class="text-white font-medium">${img.title}</span>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Animations
+        function initCounters() {
+            const counters = document.querySelectorAll('.counter');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const target = parseInt(entry.target.getAttribute('data-target'));
+                        animateCounter(entry.target, target);
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            counters.forEach(counter => observer.observe(counter));
+        }
+
+        function animateCounter(element, target) {
+            let current = 0;
+            const increment = target / 50;
+            const suffix = element.textContent.includes('%') ? '%' : 
+                          element.textContent.includes('+') ? '+' : '';
+            
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    element.textContent = target + suffix;
+                    clearInterval(timer);
+                } else {
+                    element.textContent = Math.floor(current) + suffix;
+                }
+            }, 30);
+        }
+
+        function initScrollAnimations() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.classList.add('animate-slide-up');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('section > div').forEach(el => {
+                el.style.opacity = '0';
+                el.classList.add('transition-all', 'duration-700');
+                observer.observe(el);
+            });
+        }
+
+        // UI Functions
+        function toggleDarkMode() {
+            document.documentElement.classList.toggle('dark');
+            localStorage.setItem('darkMode', document.documentElement.classList.contains('dark'));
+        }
+
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        function scrollToTestimonial(index) {
+            const container = document.getElementById('testimonials-container');
+            const cardWidth = container.children[0].offsetWidth + 24; // gap
+            container.scrollTo({ left: cardWidth * index, behavior: 'smooth' });
+        }
+
+        function handleContactSubmit(e) {
+            e.preventDefault();
+            showToast('संदेश सफलतापूर्वक भेजा गया! जल्द ही संपर्क करेंगे।');
+            e.target.reset();
+        }
+
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            document.getElementById('toast-message').textContent = message;
+            toast.classList.remove('translate-y-20', 'opacity-0');
+            setTimeout(() => {
+                toast.classList.add('translate-y-20', 'opacity-0');
+            }, 3000);
+        }
+
+        // Admin Functions
+        function showAdminLogin() {
+            document.getElementById('public-site').classList.add('hidden');
+            document.getElementById('admin-portal').classList.remove('hidden');
+            document.getElementById('admin-login').classList.remove('hidden');
+            document.getElementById('admin-dashboard').classList.add('hidden');
+            window.scrollTo(0, 0);
+        }
+
+        function showPublicSite() {
+            document.getElementById('admin-portal').classList.add('hidden');
+            document.getElementById('public-site').classList.remove('hidden');
+            document.getElementById('mobile-menu').classList.add('hidden');
+        }
+
+        function handleAdminLogin(e) {
+            e.preventDefault();
+            const username = document.getElementById('admin-username').value;
+            const password = document.getElementById('admin-password').value;
+            
+            if (username === 'admin' && password === 'admin123') {
+                document.getElementById('admin-login').classList.add('hidden');
+                document.getElementById('admin-dashboard').classList.remove('hidden');
+                loadAdminData();
+                showToast('Welcome to Admin Dashboard');
+            } else {
+                showToast('Invalid credentials');
+            }
+        }
+
+        function logoutAdmin() {
+            showPublicSite();
+            showToast('Logged out successfully');
+        }
+
+        function toggleAdminSidebar() {
+            const sidebar = document.getElementById('admin-sidebar');
+            sidebar.classList.toggle('-translate-x-full');
+        }
+
+        function switchAdminView(view) {
+            // Update nav active state
+            document.querySelectorAll('.admin-nav-btn').forEach(btn => {
+                btn.classList.remove('bg-primary/10', 'text-primary');
+                btn.classList.add('text-slate-600', 'dark:text-slate-300');
+            });
+            event.currentTarget.classList.remove('text-slate-600', 'dark:text-slate-300');
+            event.currentTarget.classList.add('bg-primary/10', 'text-primary');
+
+            // Update content based on view
+            const content = document.getElementById('admin-content');
+            const title = document.getElementById('admin-page-title');
+            
+            title.textContent = view.charAt(0).toUpperCase() + view.slice(1);
+            
+            if (view === 'dashboard') {
+                loadAdminData();
+            } else if (view === 'applications') {
+                renderApplicationsTable(content);
+            } else if (view === 'customers') {
+                renderCustomersView(content);
+            } else if (view === 'services') {
+                renderServicesManagement(content);
+            } else {
+                content.innerHTML = `<div class="glass-card p-12 rounded-xl text-center text-slate-500">
+                    <i class="fas fa-cog text-4xl mb-4"></i>
+                    <p>${view.charAt(0).toUpperCase() + view.slice(1)} management coming soon</p>
+                </div>`;
+            }
+
+            // Close mobile sidebar
+            if (window.innerWidth < 768) {
+                document.getElementById('admin-sidebar').classList.add('-translate-x-full');
+            }
+        }
+
+        function loadAdminData() {
+            const content = document.getElementById('admin-content');
+            // Default dashboard view already in HTML, just refresh table
+            renderTableRows();
+        }
+
+        function renderTableRows() {
+            const tbody = document.getElementById('admin-table-body');
+            const mockData = [
+                { id: 'APP001', name: 'राम प्रसाद', service: 'Driving License', status: 'Pending', date: '2024-01-15' },
+                { id: 'APP002', name: 'सीता देवी', service: 'PAN Card', status: 'Completed', date: '2024-01-14' },
+                { id: 'APP003', name: 'मोहन सिंह', service: 'Income Certificate', status: 'Processing', date: '2024-01-14' },
+                { id: 'APP004', name: 'गीता देवी', service: 'Scholarship Form', status: 'Completed', date: '2024-01-13' },
+                { id: 'APP005', name: 'राजेश कुमार', service: 'Udyam Registration', status: 'Pending', date: '2024-01-13' },
+            ];
+
+            tbody.innerHTML = mockData.map(row => `
+                <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
+                    <td class="px-6 py-4 text-sm font-medium text-slate-900 dark:text-white">${row.id}</td>
+                    <td class="px-6 py-4 text-sm text-slate-600 dark:text-slate-300">${row.name}</td>
+                    <td class="px-6 py-4 text-sm text-slate-600 dark:text-slate-300">${row.service}</td>
+                    <td class="px-6 py-4">
+                        <span class="px-3 py-1 rounded-full text-xs font-semibold ${getStatusColor(row.status)}">
+                            ${row.status}
+                        </span>
+                    </td>
+                    <td class="px-6 py-4 text-sm text-slate-600 dark:text-slate-300">${row.date}</td>
+                    <td class="px-6 py-4">
+                        <div class="flex gap-2">
+                            <button class="p-2 text-blue-600 hover:bg-blue-50 rounded-lg transition-colors" onclick="showToast('View ${row.id}')"><i class="fas fa-eye"></i></button>
+                            <button class="p-2 text-emerald-600 hover:bg-emerald-50 rounded-lg transition-colors" onclick="showToast('Edit ${row.id}')"><i class="fas fa-edit"></i></button>
+                        </div>
+                    </td>
+                </tr>
+            `).join('');
+        }
+
+        function getStatusColor(status) {
+            switch(status) {
+                case 'Completed': return 'bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400';
+                case 'Pending': return 'bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400';
+                case 'Processing': return 'bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400';
+                default: return 'bg-slate-100 text-slate-700';
+            }
+        }
+
+        function renderApplicationsTable(container) {
+            container.innerHTML = `
+                <div class="glass-card rounded-xl overflow-hidden">
+                    <div class="p-6 border-b border-slate-200 dark:border-slate-700 flex justify-between items-center">
+                        <h3 class="text-lg font-bold text-slate-900 dark:text-white">All Applications</h3>
+                        <div class="flex gap-2">
+                            <input type="text" placeholder="Search..." class="px-4 py-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-sm">
+                            <button class="bg-primary text-white px-4 py-2 rounded-lg text-sm hover:bg-blue-700 transition-colors">Export</button>
+                        </div>
+                    </div>
+                    <div class="overflow-x-auto">
+                        <table class="w-full">
+                            <thead class="bg-slate-50 dark:bg-slate-800/50 text-left">
+                                <tr>
+                                    <th class="px-6 py-4 text-xs font-semibold text-slate-500 uppercase">ID</th>
+                                    <th class="px-6 py-4 text-xs font-semibold text-slate-500 uppercase">Customer</th>
+                                    <th class="px-6 py-4 text-xs font-semibold text-slate-500 uppercase">Mobile</th>
+                                    <th class="px-6 py-4 text-xs font-semibold text-slate-500 uppercase">Service</th>
+                                    <th class="px-6 py-4 text-xs font-semibold text-slate-500 uppercase">Status</th>
+                                    <th class="px-6 py-4 text-xs font-semibold text-slate-500 uppercase">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-slate-200 dark:divide-slate-700">
+                                ${Array(10).fill(0).map((_, i) => `
+                                    <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50">
+                                        <td class="px-6 py-4 text-sm font-medium text-slate-900 dark:text-white">#${1000 + i}</td>
+                                        <td class="px-6 py-4 text-sm text-slate-600 dark:text-slate-300">Customer ${i + 1}</td>
+                                        <td class="px-6 py-4 text-sm text-slate-600 dark:text-slate-300">98765432${i}</td>
+                                        <td class="px-6 py-4 text-sm text-slate-600 dark:text-slate-300">${services[i % services.length].title}</td>
+                                        <td class="px-6 py-4"><span class="px-3 py-1 rounded-full text-xs font-semibold ${i % 3 === 0 ? 'bg-emerald-100 text-emerald-700' : i % 3 === 1 ? 'bg-amber-100 text-amber-700' : 'bg-blue-100 text-blue-700'}">${i % 3 === 0 ? 'Completed' : i % 3 === 1 ? 'Pending' : 'Processing'}</span></td>
+                                        <td class="px-6 py-4">
+                                            <button class="text-primary hover:text-blue-700 text-sm font-medium">View Details</button>
+                                        </td>
+                                    </tr>
+                                `).join('')}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            `;
+        }
+
+        function renderCustomersView(container) {
+            container.innerHTML = `
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    ${Array(6).fill(0).map((_, i) => `
+                        <div class="glass-card p-6 rounded-xl">
+                            <div class="flex items-center gap-4 mb-4">
+                                <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white font-bold text-lg">
+                                    ${String.fromCharCode(65 + i)}
+                                </div>
+                                <div>
+                                    <h3 class="font-bold text-slate-900 dark:text-white">Customer ${i + 1}</h3>
+                                    <p class="text-sm text-slate-500">ID: CUST${1000 + i}</p>
+                                </div>
+                            </div>
+                            <div class="space-y-2 text-sm">
+                                <div class="flex justify-between"><span class="text-slate-500">Mobile:</span> <span class="text-slate-700 dark:text-slate-300">98765432${i}</span></div>
+                                <div class="flex justify-between"><span class="text-slate-500">Total Apps:</span> <span class="text-slate-700 dark:text-slate-300">${Math.floor(Math.random() * 10) + 1}</span></div>
+                                <div class="flex justify-between"><span class="text-slate-500">Last Visit:</span> <span class="text-slate-700 dark:text-slate-300">2024-01-${10 + i}</span></div>
+                            </div>
+                            <div class="mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex gap-2">
+                                <button class="flex-1 bg-primary/10 text-primary py-2 rounded-lg text-sm font-medium hover:bg-primary/20 transition-colors">View History</button>
+                                <button class="flex-1 bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-300 py-2 rounded-lg text-sm font-medium hover:bg-slate-200 transition-colors">Edit</button>
+                            </div>
+                        </div>
+                    `).join('')}
+                </div>
+            `;
+        }
+
+        function renderServicesManagement(container) {
+            const colorMap = {
+                'blue': { bg: 'bg-blue-100', darkBg: 'dark:bg-blue-900/30', text: 'text-blue-600', darkText: 'dark:text-blue-400' },
+                'amber': { bg: 'bg-amber-100', darkBg: 'dark:bg-amber-900/30', text: 'text-amber-600', darkText: 'dark:text-amber-400' },
+                'emerald': { bg: 'bg-emerald-100', darkBg: 'dark:bg-emerald-900/30', text: 'text-emerald-600', darkText: 'dark:text-emerald-400' },
+                'purple': { bg: 'bg-purple-100', darkBg: 'dark:bg-purple-900/30', text: 'text-purple-600', darkText: 'dark:text-purple-400' },
+                'red': { bg: 'bg-red-100', darkBg: 'dark:bg-red-900/30', text: 'text-red-600', darkText: 'dark:text-red-400' },
+                'cyan': { bg: 'bg-cyan-100', darkBg: 'dark:bg-cyan-900/30', text: 'text-cyan-600', darkText: 'dark:text-cyan-400' },
+                'pink': { bg: 'bg-pink-100', darkBg: 'dark:bg-pink-900/30', text: 'text-pink-600', darkText: 'dark:text-pink-400' },
+                'indigo': { bg: 'bg-indigo-100', darkBg: 'dark:bg-indigo-900/30', text: 'text-indigo-600', darkText: 'dark:text-indigo-400' },
+                'teal': { bg: 'bg-teal-100', darkBg: 'dark:bg-teal-900/30', text: 'text-teal-600', darkText: 'dark:text-teal-400' },
+                'orange': { bg: 'bg-orange-100', darkBg: 'dark:bg-orange-900/30', text: 'text-orange-600', darkText: 'dark:text-orange-400' },
+                'green': { bg: 'bg-green-100', darkBg: 'dark:bg-green-900/30', text: 'text-green-600', darkText: 'dark:text-green-400' }
+            };
+            container.innerHTML = `
+                <div class="glass-card rounded-xl overflow-hidden">
+                    <div class="p-6 border-b border-slate-200 dark:border-slate-700 flex justify-between items-center">
+                        <h3 class="text-lg font-bold text-slate-900 dark:text-white">Manage Services</h3>
+                        <button class="bg-primary text-white px-4 py-2 rounded-lg text-sm hover:bg-blue-700 transition-colors flex items-center gap-2">
+                            <i class="fas fa-plus"></i> Add Service
+                        </button>
+                    </div>
+                    <div class="divide-y divide-slate-200 dark:divide-slate-700">
+                        ${services.map((service, i) => {
+                            const colors = colorMap[service.color];
+                            return `
+                            <div class="p-6 flex items-center justify-between hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
+                                <div class="flex items-center gap-4">
+                                    <div class="w-12 h-12 ${colors.bg} ${colors.darkBg} rounded-lg flex items-center justify-center">
+                                        <i class="fas ${service.icon} ${colors.text}"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-slate-900 dark:text-white">${service.title}</h4>
+                                        <p class="text-sm text-slate-500">₹${100 + (i * 50)} - ₹${500 + (i * 100)}</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center gap-4">
+                                    <span class="px-3 py-1 rounded-full text-xs font-semibold bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400">Active</span>
+                                    <button class="p-2 text-slate-400 hover:text-primary transition-colors"><i class="fas fa-edit"></i></button>
+                                    <button class="p-2 text-slate-400 hover:text-red-500 transition-colors"><i class="fas fa-trash"></i></button>
+                                </div>
+                            </div>
+                        `;
+                        }).join('')}
+                    </div>
+                </div>
+            `;
+        }
+    </script>
+</body>
+</html>
