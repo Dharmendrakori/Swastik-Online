@@ -8,6 +8,9 @@
     <!-- Favicon -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text x='50' y='70' font-size='80' text-anchor='middle' fill='%231E40AF'>卐</text></svg>" type="image/svg+xml">
     
+    <!-- Google Identity Services -->
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -125,6 +128,23 @@
         .break-inside-avoid {
             break-inside: avoid;
         }
+        #testimonials-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        @media (min-width: 1024px) {
+            #testimonials-container {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        @media (max-width: 768px) {
+            #testimonials-container {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 <body class="font-sans text-slate-800 dark:text-slate-200 bg-light dark:bg-slate-900 transition-colors duration-300">
@@ -156,6 +176,9 @@
                         <button onclick="toggleDarkMode()" class="p-2 rounded-lg hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors">
                             <i class="fas fa-moon dark:hidden text-slate-600"></i>
                             <i class="fas fa-sun hidden dark:block text-yellow-400"></i>
+                        </button>
+                        <button onclick="showUserProfile()" class="p-2 rounded-lg hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors text-slate-600 dark:text-slate-300" title="प्रोफ़ाइल">
+                            <i class="fas fa-user text-lg"></i>
                         </button>
                         <button onclick="showAdminLogin()" class="bg-primary hover:bg-blue-700 text-white px-6 py-2.5 rounded-full font-medium transition-all shadow-lg shadow-blue-500/30 hover:shadow-blue-500/50">
                             Admin Login
@@ -484,13 +507,53 @@
                     <p class="text-slate-600 dark:text-slate-400">हमारे संतुष्ट ग्राहक क्या कहते हैं</p>
                 </div>
 
+                <!-- Review Submission Form -->
+                <div class="max-w-2xl mx-auto mb-12">
+                    <div class="glass-card p-8 rounded-2xl">
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-6">अपनी समीक्षा साझा करें</h3>
+                        <form id="review-form" class="space-y-6" onsubmit="handleReviewSubmit(event)">
+                            <div>
+                                <label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">आपका नाम *</label>
+                                <input type="text" id="review-name" required class="w-full px-4 py-3 rounded-lg bg-slate-50 dark:bg-slate-700 border border-slate-200 dark:border-slate-600 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all dark:text-white" placeholder="आपका नाम दर्ज करें">
+                                <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">या <button type="button" onclick="fillProfileFromForm()" class="text-primary hover:underline">प्रोफ़ाइल से भरें</button></p>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">रेटिंग</label>
+                                <div id="rating-stars" class="flex gap-3 text-3xl">
+                                    <button type="button" onclick="setRating(1)" class="star-btn text-slate-300 hover:text-secondary transition-colors" data-rating="1">★</button>
+                                    <button type="button" onclick="setRating(2)" class="star-btn text-slate-300 hover:text-secondary transition-colors" data-rating="2">★</button>
+                                    <button type="button" onclick="setRating(3)" class="star-btn text-slate-300 hover:text-secondary transition-colors" data-rating="3">★</button>
+                                    <button type="button" onclick="setRating(4)" class="star-btn text-slate-300 hover:text-secondary transition-colors" data-rating="4">★</button>
+                                    <button type="button" onclick="setRating(5)" class="star-btn text-slate-300 hover:text-secondary transition-colors" data-rating="5">★</button>
+                                </div>
+                                <input type="hidden" id="review-rating" name="rating" value="5" required>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">समीक्षा</label>
+                                <textarea id="review-text" rows="4" required class="w-full px-4 py-3 rounded-lg bg-slate-50 dark:bg-slate-700 border border-slate-200 dark:border-slate-600 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all dark:text-white placeholder-slate-400" placeholder="अपनी अनुभव साझा करें..."></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full bg-primary hover:bg-blue-700 text-white font-semibold py-3 rounded-lg transition-all shadow-lg shadow-blue-500/30 hover:shadow-blue-500/50">
+                                समीक्षा भेजें
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Display Reviews -->
                 <div class="relative">
-                    <div class="flex overflow-x-auto gap-6 pb-4 scrollbar-hide snap-x snap-mandatory" id="testimonials-container">
+                    <div id="testimonials-container" class="space-y-6">
                         <!-- Testimonials injected via JS -->
                     </div>
                     
-                    <!-- Navigation Dots -->
-                    <div class="flex justify-center gap-2 mt-6" id="testimonial-dots"></div>
+                    <!-- Load More Button -->
+                    <div class="text-center mt-8">
+                        <button id="load-more-reviews" onclick="loadMoreReviews()" class="bg-slate-100 dark:bg-slate-700 hover:bg-slate-200 dark:hover:bg-slate-600 text-slate-800 dark:text-white px-6 py-3 rounded-lg font-medium transition-colors hidden">
+                            और समीक्षाएं देखें
+                        </button>
+                    </div>
                 </div>
             </div>
         </section>
@@ -909,6 +972,43 @@
         </div>
     </div>
 
+    <!-- User Profile Modal -->
+    <div id="user-profile-modal" class="fixed inset-0 bg-black/50 hidden z-50 flex items-center justify-center p-4">
+        <div class="glass-card w-full max-w-md p-8 rounded-2xl shadow-2xl">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-2xl font-bold text-slate-900 dark:text-white">प्रोफ़ाइल</h2>
+                <button onclick="closeUserProfile()" class="text-slate-500 hover:text-slate-800 dark:hover:text-slate-200">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+            
+            <form id="profile-form" class="space-y-6" onsubmit="handleProfileSubmit(event)">
+                <div>
+                    <label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">नाम</label>
+                    <input type="text" id="profile-name" required class="w-full px-4 py-3 rounded-lg bg-slate-50 dark:bg-slate-700 border border-slate-200 dark:border-slate-600 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all dark:text-white" placeholder="अपना नाम दर्ज करें">
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">मोबाइल नंबर (वैकल्पिक)</label>
+                    <input type="tel" id="profile-phone" class="w-full px-4 py-3 rounded-lg bg-slate-50 dark:bg-slate-700 border border-slate-200 dark:border-slate-600 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all dark:text-white" placeholder="आपका मोबाइल नंबर">
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">ईमेल (वैकल्पिक)</label>
+                    <input type="email" id="profile-email" class="w-full px-4 py-3 rounded-lg bg-slate-50 dark:bg-slate-700 border border-slate-200 dark:border-slate-600 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all dark:text-white" placeholder="आपका ईमेल">
+                </div>
+
+                <button type="submit" class="w-full bg-primary hover:bg-blue-700 text-white font-semibold py-3 rounded-lg transition-all shadow-lg shadow-blue-500/30 hover:shadow-blue-500/50">
+                    सहेजें
+                </button>
+            </form>
+
+            <p class="text-xs text-slate-500 dark:text-slate-400 text-center mt-4">
+                आपके प्रोफ़ाइल की जानकारी केवल स्थानीय रूप से संग्रहीत है।
+            </p>
+        </div>
+    </div>
+
     <script>
         // Data
         const services = [
@@ -956,6 +1056,34 @@
             if (localStorage.getItem('darkMode') === 'true') {
                 document.documentElement.classList.add('dark');
             }
+
+            // Pre-fill review name from profile if available
+            const profile = JSON.parse(localStorage.getItem('userProfile'));
+            if (profile && profile.name) {
+                const reviewNameField = document.getElementById('review-name');
+                if (reviewNameField) {
+                    reviewNameField.value = profile.name;
+                }
+            }
+
+            // Initialize Google Sign-In after a short delay to ensure GIS is loaded
+            setTimeout(() => {
+                if (typeof google !== 'undefined') {
+                    initGoogleSignIn();
+                    checkGoogleSession();
+                } else {
+                    // GIS not loaded yet, wait and retry
+                    const waitForGoogle = setInterval(() => {
+                        if (typeof google !== 'undefined') {
+                            clearInterval(waitForGoogle);
+                            initGoogleSignIn();
+                            checkGoogleSession();
+                        }
+                    }, 500);
+                    // Stop waiting after 10 seconds
+                    setTimeout(() => clearInterval(waitForGoogle), 10000);
+                }
+            }, 1000);
         });
 
         // Render Functions
@@ -991,34 +1119,170 @@
             }).join('');
         }
 
+        let displayedReviewsCount = 0;
+        const reviewsPerPage = 5;
+
         function renderTestimonials() {
+            const allReviews = getAllReviews();
             const container = document.getElementById('testimonials-container');
-            container.innerHTML = testimonials.map((t, i) => {
-                const stars = Array.from({length: t.rating}, () => '<i class="fas fa-star text-secondary"></i>').join('');
+            const toDisplay = allReviews.slice(0, displayedReviewsCount + reviewsPerPage);
+            
+            container.innerHTML = toDisplay.map((t) => {
+                const stars = Array.from({length: t.rating}, () => '★').join('');
+                const timeAgo = getTimeAgo(new Date(t.timestamp));
                 return `
-                <div class="snap-center shrink-0 w-full md:w-96 glass-card p-6 rounded-2xl">
-                    <div class="flex items-center gap-1 mb-4">
-                        ${stars}
+                <div class="glass-card p-6 rounded-2xl">
+                    <div class="flex items-start justify-between mb-4 gap-4">
+                        <div class="flex items-center gap-1 text-lg">
+                            <span class="text-secondary">${stars}</span>
+                        </div>
+                        <span class="text-xs text-slate-500 dark:text-slate-400 whitespace-nowrap">${timeAgo}</span>
                     </div>
-                    <p class="text-slate-700 dark:text-slate-300 mb-6 italic">"${t.text}"</p>
+                    <p class="text-slate-700 dark:text-slate-300 mb-6 italic leading-relaxed">"${t.text}"</p>
                     <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 bg-gradient-to-br from-primary to-blue-600 rounded-full flex items-center justify-center text-white font-bold">
-                            ${t.name.charAt(0)}
+                        <div class="w-12 h-12 bg-gradient-to-br from-primary to-blue-600 rounded-full flex items-center justify-center text-white font-bold text-sm flex-shrink-0">
+                            ${t.name.charAt(0).toUpperCase()}
                         </div>
                         <div>
                             <div class="font-bold text-slate-900 dark:text-white">${t.name}</div>
-                            <div class="text-sm text-slate-500">${t.role}</div>
+                            <div class="text-sm text-slate-500">${t.role || 'ग्राहक'}</div>
                         </div>
                     </div>
                 </div>
             `;
             }).join('');
 
-            // Add dots
-            const dotsContainer = document.getElementById('testimonial-dots');
-            dotsContainer.innerHTML = testimonials.map((_, i) => `
-                <button onclick="scrollToTestimonial(${i})" class="w-2 h-2 rounded-full bg-slate-300 dark:bg-slate-600 hover:bg-primary transition-colors"></button>
-            `).join('');
+            // Show/hide load more button
+            const loadMoreBtn = document.getElementById('load-more-reviews');
+            if (allReviews.length > toDisplay.length) {
+                loadMoreBtn.classList.remove('hidden');
+            } else {
+                loadMoreBtn.classList.add('hidden');
+            }
+
+            displayedReviewsCount = toDisplay.length - reviewsPerPage;
+        }
+
+        function loadMoreReviews() {
+            displayedReviewsCount += reviewsPerPage;
+            renderTestimonials();
+        }
+
+        function getAllReviews() {
+            const defaultReviews = testimonials;
+            const savedReviews = JSON.parse(localStorage.getItem('reviews')) || [];
+            // Combine and sort by timestamp (newest first)
+            return [...savedReviews, ...defaultReviews].sort((a, b) => {
+                const timeA = new Date(a.timestamp || a.date || 0).getTime();
+                const timeB = new Date(b.timestamp || b.date || 0).getTime();
+                return timeB - timeA;
+            });
+        }
+
+        function getTimeAgo(date) {
+            const seconds = Math.floor((new Date() - date) / 1000);
+            let interval = seconds / 31536000;
+            if (interval > 1) return Math.floor(interval) + " साल पहले";
+            interval = seconds / 2592000;
+            if (interval > 1) return Math.floor(interval) + " महीने पहले";
+            interval = seconds / 86400;
+            if (interval > 1) return Math.floor(interval) + " दिन पहले";
+            interval = seconds / 3600;
+            if (interval > 1) return Math.floor(interval) + " घंटे पहले";
+            interval = seconds / 60;
+            if (interval > 1) return Math.floor(interval) + " मिनट पहले";
+            return "अभी";
+        }
+
+        function setRating(rating) {
+            document.getElementById('review-rating').value = rating;
+            // Update star display
+            document.querySelectorAll('.star-btn').forEach((btn, index) => {
+                if (index < rating) {
+                    btn.classList.remove('text-slate-300');
+                    btn.classList.add('text-secondary');
+                } else {
+                    btn.classList.add('text-slate-300');
+                    btn.classList.remove('text-secondary');
+                }
+            });
+        }
+
+        function handleReviewSubmit(e) {
+            e.preventDefault();
+            
+            // Get user info - prioritize form input, then profile
+            let userName = document.getElementById('review-name').value.trim();
+            
+            if (!userName) {
+                // Try to get from profile if form is empty
+                const profile = JSON.parse(localStorage.getItem('userProfile'));
+                if (profile && profile.name) {
+                    userName = profile.name;
+                }
+            }
+            
+            if (!userName) {
+                showToast('कृपया अपना नाम दर्ज करें');
+                return;
+            }
+
+            const rating = parseInt(document.getElementById('review-rating').value);
+            const reviewText = document.getElementById('review-text').value;
+
+            const newReview = {
+                name: userName,
+                role: 'ग्राहक',
+                text: reviewText,
+                rating: rating,
+                timestamp: new Date().toISOString()
+            };
+
+            // Save to localStorage
+            const reviews = JSON.parse(localStorage.getItem('reviews')) || [];
+            reviews.push(newReview);
+            localStorage.setItem('reviews', JSON.stringify(reviews));
+
+            // Also save to profile if not already saved
+            const profile = JSON.parse(localStorage.getItem('userProfile')) || {};
+            if (!profile.name) {
+                profile.name = userName;
+                localStorage.setItem('userProfile', JSON.stringify(profile));
+            }
+
+            // Clear form and reset
+            document.getElementById('review-form').reset();
+            document.getElementById('review-name').value = '';
+            document.getElementById('review-rating').value = '5';
+            document.querySelectorAll('.star-btn').forEach((btn, index) => {
+                if (index < 5) {
+                    btn.classList.remove('text-slate-300');
+                    btn.classList.add('text-secondary');
+                } else {
+                    btn.classList.add('text-slate-300');
+                    btn.classList.remove('text-secondary');
+                }
+            });
+
+            // Re-render testimonials
+            displayedReviewsCount = 0;
+            renderTestimonials();
+            showToast('आपकी समीक्षा सफलतापूर्वक जोड़ी गई!');
+        }
+
+        function getUserName() {
+            // Try to get name from user profile
+            const profile = JSON.parse(localStorage.getItem('userProfile'));
+            if (profile && profile.name) {
+                return profile.name;
+            }
+
+            // Fallback: Try localStorage
+            let userName = localStorage.getItem('userName');
+            if (userName) return userName;
+
+            // No name available - return null, will show error
+            return null;
         }
 
         function renderGallery() {
@@ -1087,6 +1351,7 @@
         }
 
         // UI Functions
+        // UI Functions
         function toggleDarkMode() {
             document.documentElement.classList.toggle('dark');
             localStorage.setItem('darkMode', document.documentElement.classList.contains('dark'));
@@ -1095,12 +1360,6 @@
         function toggleMobileMenu() {
             const menu = document.getElementById('mobile-menu');
             menu.classList.toggle('hidden');
-        }
-
-        function scrollToTestimonial(index) {
-            const container = document.getElementById('testimonials-container');
-            const cardWidth = container.children[0].offsetWidth + 24; // gap
-            container.scrollTo({ left: cardWidth * index, behavior: 'smooth' });
         }
 
         function handleContactSubmit(e) {
@@ -1359,6 +1618,274 @@
                 </div>
             `;
         }
+
+        // Google Sign-In Configuration
+        // ⚠️ IMPORTANT: To enable Google Sign-In, create an OAuth Client ID at:
+        // https://console.cloud.google.com/apis/credentials → Create Credentials → OAuth client ID → Web application
+        // Add your domain (e.g., http://localhost, https://yoursite.com) to "Authorized JavaScript origins"
+        // Then paste the Client ID below between the quotes.
+        const GOOGLE_CLIENT_ID = '367994656666-o4kt17k0fmgrmiifrohuphf47bpk757v.apps.googleusercontent.com'; // ← PASTE YOUR GOOGLE OAUTH CLIENT ID HERE
+        const googleOAuthEnabled = GOOGLE_CLIENT_ID.length > 0;
+        let googleTokenClient = null;
+        let googleAccessToken = null;
+
+        // Initialize Google Identity Services
+        function initGoogleSignIn() {
+            if (!googleOAuthEnabled) return;
+            if (typeof google !== 'undefined' && google.accounts) {
+                googleTokenClient = google.accounts.oauth2.initTokenClient({
+                    client_id: GOOGLE_CLIENT_ID,
+                    scope: 'https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email',
+                    callback: handleGoogleCredentialResponse,
+                });
+            }
+        }
+
+        // Handle Google credential response
+        function handleGoogleCredentialResponse(response) {
+            if (response.access_token) {
+                googleAccessToken = response.access_token;
+                // Fetch user profile info from Google
+                fetchUserInfoFromGoogle(googleAccessToken);
+            }
+        }
+
+        // Fetch user info from Google API
+        function fetchUserInfoFromGoogle(accessToken) {
+            fetch('https://www.googleapis.com/oauth2/v2/userinfo', {
+                headers: {
+                    'Authorization': `Bearer ${accessToken}`
+                }
+            })
+            .then(res => res.json())
+            .then(userInfo => {
+                if (userInfo && userInfo.name) {
+                    // Save to localStorage
+                    const profile = {
+                        name: userInfo.name,
+                        email: userInfo.email,
+                        phone: '',
+                        googleId: userInfo.id,
+                        picture: userInfo.picture
+                    };
+                    localStorage.setItem('userProfile', JSON.stringify(profile));
+                    localStorage.setItem('userName', userInfo.name);
+                    localStorage.setItem('googleSignedIn', 'true');
+                    
+                    // Close sign-in prompt if open
+                    closeGoogleSignInPrompt();
+                    
+                    // Fill the review name field
+                    const reviewNameField = document.getElementById('review-name');
+                    if (reviewNameField) {
+                        reviewNameField.value = userInfo.name;
+                        showToast('Google प्रोफ़ाइल से ' + userInfo.name + ' भरा गया');
+                    }
+                }
+            })
+            .catch(err => {
+                console.error('Error fetching Google user info:', err);
+                showToast('Google प्रोफ़ाइल प्राप्त करने में त्रुटि');
+            });
+        }
+
+        // Check if user has a Google sign-in session (via stored token or Google's One Tap)
+        function checkGoogleSession() {
+            // First check if we already have stored profile from Google
+            const googleSignedIn = localStorage.getItem('googleSignedIn') === 'true';
+            const profile = JSON.parse(localStorage.getItem('userProfile'));
+            
+            if (googleSignedIn && profile && profile.email) {
+                // Already signed in with Google, auto-fill the name
+                const reviewNameField = document.getElementById('review-name');
+                if (reviewNameField && !reviewNameField.value) {
+                    reviewNameField.value = profile.name || '';
+                }
+                return true;
+            }
+            
+            // Try Google One Tap auto sign-in if available
+            if (typeof google !== 'undefined' && google.accounts && google.accounts.id) {
+                google.accounts.id.initialize({
+                    client_id: GOOGLE_CLIENT_ID,
+                    callback: handleGoogleOneTapResponse,
+                    cancel_on_tap_outside: false
+                });
+                google.accounts.id.prompt((notification) => {
+                    if (notification.isNotDisplayed() || notification.isSkippedMoment()) {
+                        // User dismissed or One Tap not available - no session
+                        console.log('Google One Tap not available or dismissed');
+                    }
+                });
+            }
+        }
+
+        // Handle Google One Tap response
+        function handleGoogleOneTapResponse(response) {
+            if (response.credential) {
+                // Decode JWT to get user info
+                try {
+                    const payload = JSON.parse(atob(response.credential.split('.')[1]));
+                    if (payload && payload.name) {
+                        const profile = {
+                            name: payload.name,
+                            email: payload.email,
+                            phone: '',
+                            googleId: payload.sub,
+                            picture: payload.picture
+                        };
+                        localStorage.setItem('userProfile', JSON.stringify(profile));
+                        localStorage.setItem('userName', payload.name);
+                        localStorage.setItem('googleSignedIn', 'true');
+                        
+                        const reviewNameField = document.getElementById('review-name');
+                        if (reviewNameField && !reviewNameField.value) {
+                            reviewNameField.value = payload.name;
+                            showToast('Google प्रोफ़ाइल से नाम भरा गया: ' + payload.name);
+                        }
+                    }
+                } catch (e) {
+                    console.error('Error decoding Google credential:', e);
+                }
+            }
+        }
+
+        // Trigger Google Sign-In
+        function triggerGoogleSignIn() {
+            if (googleTokenClient) {
+                googleTokenClient.requestAccessToken();
+            } else if (typeof google !== 'undefined' && google.accounts) {
+                // Re-attempt initialization if not done yet
+                initGoogleSignIn();
+                if (googleTokenClient) {
+                    googleTokenClient.requestAccessToken();
+                }
+            } else {
+                showToast('Google सेवा उपलब्ध नहीं है। कृपया पृष्ठ को पुनः लोड करें।');
+            }
+        }
+
+        // Sign out from Google
+        function signOutFromGoogle() {
+            localStorage.removeItem('googleSignedIn');
+            // Note: Google Access Token revocation is optional
+            googleAccessToken = null;
+            showToast('Google साइन-आउट हो गया');
+        }
+
+        // User Profile Functions
+        function fillProfileFromForm() {
+            const profile = JSON.parse(localStorage.getItem('userProfile')) || {};
+            const reviewNameField = document.getElementById('review-name');
+            
+            if (profile.name && profile.email) {
+                // Profile has Google data (has email) - auto-fill
+                reviewNameField.value = profile.name;
+                showToast('Google प्रोफ़ाइल से ' + profile.name + ' भरा गया');
+                return;
+            }
+            
+            if (profile.name) {
+                reviewNameField.value = profile.name;
+                showToast('प्रोफ़ाइल से नाम भरा गया');
+                return;
+            }
+            
+            // No profile found - check if Google session exists
+            const googleSignedIn = localStorage.getItem('googleSignedIn') === 'true';
+            
+            if (googleSignedIn) {
+                // Shouldn't reach here if profile exists, but try triggering re-auth
+                triggerGoogleSignIn();
+            } else {
+                // Show sign-in prompt and trigger Google sign-in
+                showGoogleSignInPrompt();
+            }
+        }
+
+        // Show Google Sign-In prompt modal
+        function showGoogleSignInPrompt() {
+            // Create a temporary modal/prompt for Google sign-in
+            const existingPrompt = document.getElementById('google-signin-prompt');
+            if (existingPrompt) {
+                existingPrompt.classList.remove('hidden');
+                return;
+            }
+            
+            const promptHTML = `
+                <div id="google-signin-prompt" class="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
+                    <div class="glass-card w-full max-w-sm p-8 rounded-2xl shadow-2xl text-center">
+                        <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-700 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+                            <i class="fab fa-google text-2xl text-white"></i>
+                        </div>
+                        <h2 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Google साइन-इन</h2>
+                        <p class="text-slate-600 dark:text-slate-400 mb-6">अपनी प्रोफ़ाइल जानकारी स्वचालित रूप से भरने के लिए Google से साइन-इन करें</p>
+                        
+                        <button onclick="triggerGoogleSignIn()" class="w-full bg-white hover:bg-slate-50 text-slate-800 border-2 border-slate-200 font-semibold py-3 px-6 rounded-lg transition-all flex items-center justify-center gap-3 shadow-sm hover:shadow-md">
+                            <i class="fab fa-google text-xl text-blue-600"></i>
+                            <span>Google से साइन-इन करें</span>
+                        </button>
+                        
+                        <button onclick="closeGoogleSignInPrompt()" class="mt-4 text-slate-500 hover:text-slate-700 dark:hover:text-slate-300 text-sm">
+                            बाद में साइन-इन करें
+                        </button>
+                    </div>
+                </div>
+            `;
+            
+            document.body.insertAdjacentHTML('beforeend', promptHTML);
+        }
+
+        function closeGoogleSignInPrompt() {
+            const prompt = document.getElementById('google-signin-prompt');
+            if (prompt) {
+                prompt.remove();
+            }
+        }
+
+        function showUserProfile() {
+            const modal = document.getElementById('user-profile-modal');
+            const profile = JSON.parse(localStorage.getItem('userProfile')) || {};
+            
+            document.getElementById('profile-name').value = profile.name || '';
+            document.getElementById('profile-phone').value = profile.phone || '';
+            document.getElementById('profile-email').value = profile.email || '';
+            
+            modal.classList.remove('hidden');
+        }
+
+        function closeUserProfile() {
+            document.getElementById('user-profile-modal').classList.add('hidden');
+        }
+
+        function handleProfileSubmit(e) {
+            e.preventDefault();
+            
+            const profile = {
+                name: document.getElementById('profile-name').value,
+                phone: document.getElementById('profile-phone').value,
+                email: document.getElementById('profile-email').value
+            };
+            
+            localStorage.setItem('userProfile', JSON.stringify(profile));
+            localStorage.setItem('userName', profile.name);
+            
+            // Also fill the review form name if it's empty
+            const reviewNameField = document.getElementById('review-name');
+            if (reviewNameField && !reviewNameField.value) {
+                reviewNameField.value = profile.name;
+            }
+            
+            showToast('प्रोफ़ाइल सफलतापूर्वक अपडेट की गई!');
+            closeUserProfile();
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('user-profile-modal')?.addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeUserProfile();
+            }
+        });
     </script>
 </body>
 </html>
